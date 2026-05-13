@@ -1,7 +1,7 @@
 # backup-hidden-genius-invitational
 
-This repository includes a simple static page with a working PDF download
-button.
+This repository includes a simple static page with a working Sample Book PDF
+download button.
 
 ## How the PDF download works
 
@@ -9,18 +9,18 @@ button.
 - The download button links to:
 
   ```text
-  documents/hidden-genius-invitational.pdf
+  documents/sample-book.pdf
   ```
 
 - The link uses the HTML `download` attribute so most browsers will download
   the file instead of opening it in the same tab.
 
-## Replace the sample PDF
+## Replace the Sample Book PDF
 
-The current PDF is a sample placeholder. To publish your real PDF:
+To update the book PDF later:
 
-1. Rename your PDF to `hidden-genius-invitational.pdf`.
-2. Replace the file at `documents/hidden-genius-invitational.pdf`.
+1. Rename your PDF to `sample-book.pdf`.
+2. Replace the file at `documents/sample-book.pdf`.
 3. Commit and push the change.
 
 Keeping the same filename means the download button in `index.html` will keep

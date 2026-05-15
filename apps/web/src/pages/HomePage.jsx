@@ -152,7 +152,11 @@ const HomePage = () => {
             <StudentStoryCard 
               image="https://images.unsplash.com/photo-1520393166118-b7cfb87d5ae9"
               headline="Adam's First Student"
-              description="In a single 3-hour 1-on-1 coaching session, one student went from a shaky presentation and a short video of a few professors praising his campus-wide app idea after coming up with it at a campus hackathon… to a complete professional pitch deck with market analysis, feasibility studies, and full execution plan. That one focused session landed him a paid summer job right out of college to lead the development of the program he created — positioning him to level up and run the campus rollout and so much more now that he has this book to help guide him. This is exactly the kind of real-time coaching breakthrough The Business of Life (and the upcoming Max AI Coach) is built to deliver."
+              description={[
+                "In a single 3-hour 1-on-1 coaching session, one student went from a shaky presentation and a short video of a few professors praising his campus-wide app idea after coming up with it at a campus hackathon... to a complete professional pitch deck with market analysis, feasibility studies, and full execution plan.",
+                "That one focused session landed him a paid summer job right out of college to lead the development of the program he created — positioning him to level up and run the campus rollout and so much more now that he has this book to help guide him.",
+                "This is exactly the kind of real-time coaching breakthrough The Business of Life (and the upcoming Max AI Coach) is built to deliver."
+              ]}
             />
             
             <motion.p 

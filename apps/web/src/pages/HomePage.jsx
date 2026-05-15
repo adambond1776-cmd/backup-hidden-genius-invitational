@@ -345,7 +345,7 @@ const HomePage = () => {
                 transition={{ delay: 0.2 }}
                 className="text-lg text-muted-foreground max-w-2xl mx-auto"
               >
-                Our comprehensive ecosystem includes literature, easy to use step-by-step guides, and a mobile app that goes with you to deliver AI coaching. Whether you're in high school or navigating your early twenties, you have everything you need.
+                Our comprehensive ecosystem includes literature, easy to use step-by-step guides, and a mobile app (Beta testing now available) that goes with you... delivering AI coaching to you, when you need it. Whether you're in high school or navigating your early twenties, you have everything you need.
               </motion.p>
             </div>
             

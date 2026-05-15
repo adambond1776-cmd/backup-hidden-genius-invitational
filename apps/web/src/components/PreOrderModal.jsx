@@ -10,6 +10,9 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import pb from '@/lib/pocketbaseClient';
 
+const SOFTCOVER_PRICE = 14.99;
+const formatPrice = (amount) => amount.toFixed(2);
+
 const PreOrderModal = ({ isOpen, onClose }) => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [submitError, setSubmitError] = useState('');
@@ -57,7 +60,7 @@ const PreOrderModal = ({ isOpen, onClose }) => {
             <DialogHeader>
               <DialogTitle className="text-2xl font-bold text-foreground">Pre-Order The Manual</DialogTitle>
               <DialogDescription className="text-muted-foreground">
-                Secure your copy before the official launch. $19.99 per copy.
+                Secure your copy before the official launch. ${formatPrice(SOFTCOVER_PRICE)} per copy.
               </DialogDescription>
             </DialogHeader>
 
@@ -88,10 +91,10 @@ const PreOrderModal = ({ isOpen, onClose }) => {
                       <SelectValue placeholder="Select quantity" />
                     </SelectTrigger>
                     <SelectContent className="bg-popover border-border text-popover-foreground">
-                      <SelectItem value="1">1 Copy ($19.99)</SelectItem>
-                      <SelectItem value="2">2 Copies ($39.98)</SelectItem>
-                      <SelectItem value="3">3 Copies ($59.97)</SelectItem>
-                      <SelectItem value="5">5 Copies ($99.95)</SelectItem>
+                      <SelectItem value="1">1 Copy (${formatPrice(SOFTCOVER_PRICE)})</SelectItem>
+                      <SelectItem value="2">2 Copies (${formatPrice(SOFTCOVER_PRICE * 2)})</SelectItem>
+                      <SelectItem value="3">3 Copies (${formatPrice(SOFTCOVER_PRICE * 3)})</SelectItem>
+                      <SelectItem value="5">5 Copies (${formatPrice(SOFTCOVER_PRICE * 5)})</SelectItem>
                       <SelectItem value="10">10+ Copies (Contact for bulk pricing)</SelectItem>
                     </SelectContent>
                   </Select>
@@ -155,7 +158,7 @@ const PreOrderModal = ({ isOpen, onClose }) => {
               />
               
               <div className="text-sm text-foreground/80 space-y-2">
-                <p><strong>Total Due:</strong> ${(parseInt(quantity, 10) * 19.99).toFixed(2)}</p>
+                <p><strong>Total Due:</strong> ${formatPrice(parseInt(quantity, 10) * SOFTCOVER_PRICE)}</p>
                 <p>Send payment via Venmo to <strong>@AdamBond1776</strong> with your email in the note.</p>
                 <p className="text-muted-foreground">You'll receive your ebook upon payment confirmation.</p>
               </div>

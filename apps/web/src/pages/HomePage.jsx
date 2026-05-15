@@ -363,9 +363,14 @@ const HomePage = () => {
             >
               <Smartphone className="w-12 h-12 text-primary mx-auto mb-6" />
               <h3 className="text-2xl font-bold mb-4">Take the tools everywhere</h3>
-              <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
-                Download the MaxCoach app to track your progress across all eight tools and get real-time guidance.
-              </p>
+              <div className="text-muted-foreground mb-8 max-w-2xl mx-auto space-y-4">
+                <p>
+                  Download the MaxCoach app. After the Beta test, you will be able to track your progress across all eight tools, set goals, reminders, etc., and get real-time guidance to keep you on the path toward becoming the best version of yourself.
+                </p>
+                <p>
+                  No more excuses or obstacles. Just opportunities to level up every day.
+                </p>
+              </div>
               <Button size="lg" variant="outline" className="h-14 px-8 text-lg font-bold border-primary text-primary hover:bg-primary/10" asChild>
                 <a href="https://maxcoach.app" target="_blank" rel="noopener noreferrer">
                   Download MaxCoach App

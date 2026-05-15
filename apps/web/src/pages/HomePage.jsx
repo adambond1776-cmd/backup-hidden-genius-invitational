@@ -290,9 +290,13 @@ const HomePage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="mb-6 leading-tight text-3xl md:text-5xl">
-                  This isn't a documentary we're making <span className="text-primary italic">for</span> you. <br/>
-                  It's a documentary we're making <span className="text-primary italic">with</span> you.
+                <h2 className="mb-6 leading-tight text-3xl md:text-5xl space-y-4">
+                  <span className="block">
+                    This isn't a documentary we're making <span className="text-primary italic">for</span> you.
+                  </span>
+                  <span className="block">
+                    It's a documentary we're making <span className="text-primary italic">with</span> you.
+                  </span>
                 </h2>
                 <p className="text-xl text-foreground/90 font-medium mb-10 border-l-4 border-primary pl-4">
                   Vote on the stories we follow, suggest new directions, and see your input directly influence what gets made.

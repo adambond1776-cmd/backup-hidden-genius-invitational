@@ -195,7 +195,7 @@ const HomePage = () => {
                 
                 <ul className="space-y-6 mb-10">
                   {[
-                    'One-on-one AI coaching calibrated to your specific goals',
+                    "Be the first to experience AI coaching that actually knows you — built around your goals, your life, your next move. And if you qualify, you get direct access to a seasoned executive who's already solved the problems you're standing in front of",
                     'Daily execution of the eight foundational tools',
                     'Real-time documentation of your transformation',
                     'Direct access to proven, easy to use coaching methodologies'
@@ -338,15 +338,20 @@ const HomePage = () => {
               >
                 Eight tools. One integrated system.
               </motion.p>
-              <motion.p 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="text-lg text-muted-foreground max-w-2xl mx-auto"
+                className="text-lg text-muted-foreground max-w-2xl mx-auto space-y-4"
               >
-                Our comprehensive ecosystem includes literature, easy to use step-by-step guides, and a mobile app (Beta testing now available) that goes with you... delivering AI coaching to you, when you need it. Whether you're in high school or navigating your early twenties, you have everything you need.
-              </motion.p>
+                <p>
+                  A book that challenges how you think. Guides that tell you exactly what to do next, track your progress and keep you on point without burning out.
+                </p>
+                <p>
+                  Giving you a personal AI coach in your pocket that shows up when life gets loud and never forgets a thing that's important to you. Whether you're still in high school or already in the thick of your twenties — you're not figuring this out alone anymore.
+                </p>
+              </motion.div>
             </div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
@@ -410,10 +415,10 @@ const HomePage = () => {
                 <h2 className="mb-6">Built by someone who needed it.</h2>
                 <div className="space-y-6 text-lg text-foreground/80 leading-relaxed">
                   <p>
-                    Adam started as an F student. The traditional system didn't work for him, and burnout felt inevitable. 
+                    Adam started as an F student. The traditional system didn't work for him, and burnout came.
                   </p>
                   <p>
-                    Instead of accepting that, he rewired his brain. He spent years synthesizing psychology, productivity, and leadership principles into a framework that actually functioned in the real world.
+                    Instead of accepting that, he rewired his brain. Then later spent years synthesizing psychology, productivity, human nature and leadership principles into a framework that actually functioned in the real world.
                   </p>
                   <p className="font-bold text-primary">
                     He built a system that works. Now, he's handing over the blueprint.

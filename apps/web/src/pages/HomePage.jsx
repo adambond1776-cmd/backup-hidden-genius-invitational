@@ -290,7 +290,7 @@ const HomePage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="mb-6 leading-tight text-3xl md:text-5xl space-y-4">
+                <h2 className="mb-8 leading-tight text-3xl md:text-5xl flex flex-col gap-6 md:gap-8">
                   <span className="block">
                     This isn't a documentary we're making <span className="text-primary italic">for</span> you.
                   </span>

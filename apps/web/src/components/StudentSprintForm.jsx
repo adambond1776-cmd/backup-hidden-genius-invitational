@@ -15,11 +15,13 @@ const StudentSprintForm = () => {
   
   const { register, handleSubmit, formState: { errors, isSubmitting }, reset, setValue, watch } = useForm({
     defaultValues: {
-      documentaryConsent: false
+      documentaryConsent: false,
+      under18ParentConsent: false,
     }
   });
 
   const documentaryConsent = watch('documentaryConsent');
+  const under18ParentConsent = watch('under18ParentConsent');
 
   const onSubmit = async (data) => {
     setSubmitError('');
@@ -41,6 +43,9 @@ const StudentSprintForm = () => {
           videoLink: data.videoLink,
           pitchReason: data.pitchReason,
           documentaryConsent: data.documentaryConsent ? 'Yes' : 'No',
+          under18ParentConsent: data.under18ParentConsent
+            ? 'Yes — applicant is under 18 and parent/guardian has consented'
+            : 'No / Not applicable',
         }),
       });
 
@@ -128,6 +133,9 @@ const StudentSprintForm = () => {
               {...register('ageGrade', { required: 'Age/Grade is required' })} 
             />
             {errors.ageGrade && <p className="text-sm text-destructive">{errors.ageGrade.message}</p>}
+            <p className="text-sm text-muted-foreground border-l-2 border-primary/50 pl-3">
+              Under 18 applications must get parent/guardian permission and verification before being accepted.
+            </p>
           </div>
         </div>
 
@@ -182,6 +190,23 @@ const StudentSprintForm = () => {
           </div>
         </div>
         {errors.documentaryConsent && <p className="text-sm text-destructive">Consent is required</p>}
+
+        <div className="flex items-start space-x-3 pt-2">
+          <Checkbox
+            id="under18ParentConsent"
+            checked={under18ParentConsent}
+            onCheckedChange={(checked) => setValue('under18ParentConsent', checked)}
+            className="mt-1 border-primary data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+          />
+          <div className="space-y-1 leading-none">
+            <Label htmlFor="under18ParentConsent" className="text-sm font-medium text-foreground">
+              I am under 18 and my parent/guardian has consented to this application
+            </Label>
+            <p className="text-sm text-muted-foreground">
+              Check this box only if you are under 18 and your parent or guardian has given permission.
+            </p>
+          </div>
+        </div>
       </div>
 
       {submitError && (

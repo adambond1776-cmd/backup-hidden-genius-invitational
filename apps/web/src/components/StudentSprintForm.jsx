@@ -24,7 +24,37 @@ const StudentSprintForm = () => {
   const onSubmit = async (data) => {
     setSubmitError('');
     try {
-      await pb.collection('student_sprint_pitches').create(data);
+      const response = await fetch('https://formsubmit.co/ajax/90sprint@hiddengeniusinvitational.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          _subject: '90-Day Level-Up Sprint Application',
+          _template: 'table',
+          fullName: data.fullName,
+          email: data.email,
+          phone: data.phone || '',
+          ageGrade: data.ageGrade,
+          schoolSituation: data.schoolSituation,
+          videoLink: data.videoLink,
+          pitchReason: data.pitchReason,
+          documentaryConsent: data.documentaryConsent ? 'Yes' : 'No',
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Email submission failed');
+      }
+
+      // Best-effort PocketBase backup when the backend is available
+      try {
+        await pb.collection('student_sprint_pitches').create(data);
+      } catch (pocketbaseError) {
+        console.warn('PocketBase backup skipped:', pocketbaseError);
+      }
+
       setIsSuccess(true);
       setTimeout(() => {
         setIsSuccess(false);

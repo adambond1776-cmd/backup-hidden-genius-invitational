@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const CountdownTimer = () => {
-  // 30 days from May 12, 2026 -> June 11, 2026
-  const targetDate = new Date('2026-06-11T23:59:59').getTime();
+  // Applications open through Nov 6, 2026 (90 days from Aug 8, 2026)
+  const targetDate = new Date('2026-11-06T23:59:59').getTime();
   
   const calculateTimeLeft = () => {
     const now = new Date().getTime();
@@ -37,7 +37,7 @@ const CountdownTimer = () => {
     return (
       <div className="text-center p-6 border-2 border-primary/50 bg-primary/10 rounded-xl">
         <p className="text-2xl font-bold text-primary uppercase tracking-widest">
-          Application Closed
+          Applications Open
         </p>
       </div>
     );
@@ -53,7 +53,7 @@ const CountdownTimer = () => {
   return (
     <div className="flex flex-col items-center gap-4">
       <div className="text-primary font-bold tracking-widest uppercase text-sm mb-2">
-        Application Deadline
+        Applications Open
       </div>
       <div className="flex gap-3 md:gap-6 justify-center">
         {timeUnits.map((unit, index) => (

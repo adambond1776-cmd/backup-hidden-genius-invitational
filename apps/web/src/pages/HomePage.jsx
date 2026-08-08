@@ -170,13 +170,29 @@ const HomePage = () => {
                 "This is exactly the kind of real-time coaching breakthrough The Business of Life (and the upcoming Max AI Coach) is built to deliver."
               ]}
             />
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="relative w-full max-w-3xl mx-auto mt-16 aspect-video rounded-2xl overflow-hidden border border-border shadow-2xl shadow-black/40 bg-black"
+            >
+              <iframe
+                src="https://drive.google.com/file/d/1CLbZrtGH03nQOh3IAO9EmpMiiYB6wVoH/preview"
+                title="Hidden Genius Labs — This is just the beginning"
+                className="absolute inset-0 h-full w-full"
+                allow="autoplay; encrypted-media; picture-in-picture"
+                allowFullScreen
+              />
+            </motion.div>
             
             <motion.p 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="text-center text-2xl font-bold mt-16 text-muted-foreground"
+              className="text-center text-2xl font-bold mt-10 text-muted-foreground"
             >
               This is just the beginning.
             </motion.p>

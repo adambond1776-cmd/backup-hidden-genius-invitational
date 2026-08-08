@@ -67,28 +67,26 @@ const HomePage = () => {
                 <div className="flex flex-col sm:flex-row flex-wrap gap-4 mb-16">
                   <Button 
                     size="lg" 
-                    onClick={() => setIsPreOrderModalOpen(true)}
+                    asChild
                     className="h-14 px-8 text-lg font-bold bg-primary text-primary-foreground hover:bg-primary/90"
                   >
-                    <BookOpen className="mr-2 w-5 h-5" />
-                    Softcover Edition — $14.99
+                    <a href="https://a.co/d/01kVEFgM" target="_blank" rel="noopener noreferrer">
+                      <BookOpen className="mr-2 w-5 h-5" />
+                      Softcover Edition — $14.99
+                    </a>
                   </Button>
                   
                   <Button 
                     size="lg" 
                     variant="outline" 
-                    onClick={() => setIsPreOrderModalOpen(true)}
+                    asChild
                     className="h-14 px-8 text-lg font-bold border-border text-foreground hover:bg-muted"
                   >
-                    <Smartphone className="mr-2 w-5 h-5" />
-                    E-book Edition — $4.99
+                    <a href="https://a.co/d/04TgLHwV" target="_blank" rel="noopener noreferrer">
+                      <Smartphone className="mr-2 w-5 h-5" />
+                      E-book Edition — $4.99
+                    </a>
                   </Button>
-
-                  <PDFGenerator 
-                    asButton 
-                    variant="secondary" 
-                    className="h-14 px-8 text-lg font-bold bg-secondary text-secondary-foreground hover:bg-secondary/90"
-                  />
                 </div>
 
                 <div className="space-y-8">

@@ -198,8 +198,8 @@ const HomePage = () => {
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-destructive/10 text-destructive text-sm font-bold tracking-wide uppercase mb-6 border border-destructive/20">
                   Documentary Cast Call
                 </div>
-                <h2 className="mb-6 leading-tight">
-                  We're looking for 5-20 students to level up in the next 90 days.
+                <h2 className="mb-6 leading-tight text-3xl md:text-4xl">
+                  We are looking for 5 to 20 students to help us video document the first Hidden Genius Labs &ldquo;90-Day Level-Up Sprint&rdquo; so we can show the world just how effective this program can be in the hands of someone willing to use it as intended
                 </h2>
                 <p className="text-xl text-primary font-bold mb-8">
                   You'll be featured in the documentary. Your story matters.

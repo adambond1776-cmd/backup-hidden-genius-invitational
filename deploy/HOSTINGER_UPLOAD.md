@@ -19,12 +19,13 @@ That command rebuilds the site and regenerates `deploy/hostinger-upload.zip`.
 2. Open the `public_html` folder.
 3. Upload `hostinger-upload.zip`.
 4. Extract it inside `public_html`.
-5. Confirm `index.html`, `.htaccess`, `llms.txt`, `robots.txt`, and `sitemap.xml` are directly inside `public_html`.
+5. Confirm `index.html`, `.htaccess`, `llms.txt`, `robots.txt`, `sitemap.xml`, and the `images/` folder are directly inside `public_html`.
 
 Do not upload the full source project to `public_html`; upload this built ZIP instead.
 
 This package inlines the app's CSS and JavaScript into `index.html` so Hostinger's
 File Manager does not need to preserve an `assets/` folder during extraction.
+Static book cover images are included in the `images/` folder and must be uploaded with the ZIP.
 
 ## Important limitation
 

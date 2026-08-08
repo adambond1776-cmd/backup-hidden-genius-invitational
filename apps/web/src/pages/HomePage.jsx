@@ -111,24 +111,13 @@ const HomePage = () => {
               >
                 <div className="relative">
                   <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
-                  <div className="relative z-10 w-full rounded-2xl shadow-2xl shadow-black/50 border border-border bg-card/80 p-3 sm:p-4 md:p-5 transform -rotate-2 hover:rotate-0 transition-transform duration-500">
-                    <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                      <img
-                        src="/images/book-front-cover.webp"
-                        alt="The Business of Life — front cover"
-                        className="w-full h-auto rounded-xl shadow-lg border border-border/60"
-                        width={1200}
-                        height={1836}
-                      />
-                      <img
-                        src="/images/book-back-cover.webp"
-                        alt="The Business of Life — back cover"
-                        className="w-full h-auto rounded-xl shadow-lg border border-border/60"
-                        width={1200}
-                        height={1837}
-                      />
-                    </div>
-                  </div>
+                  <img
+                    src="/images/book-cover-full.webp"
+                    alt="The Business of Life — full paperback cover"
+                    className="relative z-10 w-full rounded-2xl shadow-2xl shadow-black/50 border border-border transform -rotate-2 hover:rotate-0 transition-transform duration-500"
+                    width={2000}
+                    height={1461}
+                  />
                 </div>
                 
                 <div id="sample">

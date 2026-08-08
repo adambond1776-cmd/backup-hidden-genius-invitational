@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { ArrowRight, Play, Smartphone, BookOpen } from 'lucide-react';
+import { ArrowRight, Play, Smartphone, BookOpen, Book } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import CountdownTimer from '@/components/CountdownTimer.jsx';
 import StudentStoryCard from '@/components/StudentStoryCard.jsx';
@@ -85,6 +85,18 @@ const HomePage = () => {
                     <a href="https://a.co/d/04TgLHwV" target="_blank" rel="noopener noreferrer">
                       <Smartphone className="mr-2 w-5 h-5" />
                       E-book Edition — $4.99
+                    </a>
+                  </Button>
+
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    asChild
+                    className="h-14 px-8 text-lg font-bold border-border text-foreground hover:bg-muted"
+                  >
+                    <a href="https://a.co/d/04AosvGI" target="_blank" rel="noopener noreferrer">
+                      <Book className="mr-2 w-5 h-5" />
+                      Hardcover Edition — $24.99
                     </a>
                   </Button>
                 </div>

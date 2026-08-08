@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { ArrowRight, Play, Smartphone, BookOpen } from 'lucide-react';
+import { ArrowRight, Play, Smartphone, BookOpen, Book } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import CountdownTimer from '@/components/CountdownTimer.jsx';
 import StudentStoryCard from '@/components/StudentStoryCard.jsx';
@@ -67,28 +67,38 @@ const HomePage = () => {
                 <div className="flex flex-col sm:flex-row flex-wrap gap-4 mb-16">
                   <Button 
                     size="lg" 
-                    onClick={() => setIsPreOrderModalOpen(true)}
+                    asChild
                     className="h-14 px-8 text-lg font-bold bg-primary text-primary-foreground hover:bg-primary/90"
                   >
-                    <BookOpen className="mr-2 w-5 h-5" />
-                    Softcover Edition — $14.99
+                    <a href="https://a.co/d/01kVEFgM" target="_blank" rel="noopener noreferrer">
+                      <BookOpen className="mr-2 w-5 h-5" />
+                      Softcover Edition — $14.99
+                    </a>
                   </Button>
                   
                   <Button 
                     size="lg" 
                     variant="outline" 
-                    onClick={() => setIsPreOrderModalOpen(true)}
+                    asChild
                     className="h-14 px-8 text-lg font-bold border-border text-foreground hover:bg-muted"
                   >
-                    <Smartphone className="mr-2 w-5 h-5" />
-                    E-book Edition — $4.99
+                    <a href="https://a.co/d/04TgLHwV" target="_blank" rel="noopener noreferrer">
+                      <Smartphone className="mr-2 w-5 h-5" />
+                      E-book Edition — $4.99
+                    </a>
                   </Button>
 
-                  <PDFGenerator 
-                    asButton 
-                    variant="secondary" 
-                    className="h-14 px-8 text-lg font-bold bg-secondary text-secondary-foreground hover:bg-secondary/90"
-                  />
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    asChild
+                    className="h-14 px-8 text-lg font-bold border-border text-foreground hover:bg-muted"
+                  >
+                    <a href="https://a.co/d/04AosvGI" target="_blank" rel="noopener noreferrer">
+                      <Book className="mr-2 w-5 h-5" />
+                      Hardcover Edition — $24.99
+                    </a>
+                  </Button>
                 </div>
 
                 <div className="space-y-8">
@@ -111,10 +121,12 @@ const HomePage = () => {
               >
                 <div className="relative">
                   <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
-                  <img 
-                    src="https://images.unsplash.com/photo-1663580109780-1c5180517c7b" 
-                    alt="The Business of Life Book Cover" 
+                  <img
+                    src="/images/book-cover-full.webp"
+                    alt="The Business of Life — full paperback cover"
                     className="relative z-10 w-full rounded-2xl shadow-2xl shadow-black/50 border border-border transform -rotate-2 hover:rotate-0 transition-transform duration-500"
+                    width={2000}
+                    height={1461}
                   />
                 </div>
                 
@@ -186,8 +198,8 @@ const HomePage = () => {
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-destructive/10 text-destructive text-sm font-bold tracking-wide uppercase mb-6 border border-destructive/20">
                   Documentary Cast Call
                 </div>
-                <h2 className="mb-6 leading-tight">
-                  We're looking for 5-20 students to level up in the next 90 days.
+                <h2 className="mb-6 leading-tight text-3xl md:text-4xl">
+                  We are looking for 5 to 20 students to help us video document the first Hidden Genius Labs &ldquo;90-Day Level-Up Sprint&rdquo; so we can show the world just how effective this program can be in the hands of someone willing to use it as intended
                 </h2>
                 <p className="text-xl text-primary font-bold mb-8">
                   You'll be featured in the documentary. Your story matters.

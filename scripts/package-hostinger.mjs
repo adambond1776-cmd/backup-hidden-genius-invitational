@@ -1,5 +1,15 @@
 import { execFileSync } from 'node:child_process';
-import { mkdtempSync, rmSync, cpSync, mkdirSync, readFileSync, writeFileSync, existsSync, statSync } from 'node:fs';
+import {
+  mkdtempSync,
+  rmSync,
+  cpSync,
+  mkdirSync,
+  readFileSync,
+  writeFileSync,
+  existsSync,
+  statSync,
+  readdirSync,
+} from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 
@@ -8,6 +18,25 @@ const distDir = path.join(rootDir, 'dist/apps/web');
 const deployDir = path.join(rootDir, 'deploy');
 const outputZip = path.join(deployDir, 'hostinger-upload.zip');
 const requiredFiles = ['.htaccess', 'index.html', 'llms.txt', 'robots.txt', 'sitemap.xml'];
+const optionalDirectories = ['images', 'documents'];
+
+const listRelativeFiles = (directoryPath, prefix = '') => {
+  const entries = readdirSync(directoryPath, { withFileTypes: true });
+  const files = [];
+
+  for (const entry of entries) {
+    const relativePath = prefix ? path.join(prefix, entry.name) : entry.name;
+    const absolutePath = path.join(directoryPath, entry.name);
+
+    if (entry.isDirectory()) {
+      files.push(...listRelativeFiles(absolutePath, relativePath));
+    } else if (entry.isFile()) {
+      files.push(relativePath);
+    }
+  }
+
+  return files;
+};
 
 const readBuiltAsset = (assetPath) => {
   const normalizedPath = assetPath.replace(/^\//, '');
@@ -75,15 +104,29 @@ try {
     }
   }
 
+  const packagedEntries = [...requiredFiles];
+
+  for (const directoryName of optionalDirectories) {
+    const sourcePath = path.join(distDir, directoryName);
+    const targetPath = path.join(stagingDir, directoryName);
+
+    if (!existsSync(sourcePath)) {
+      continue;
+    }
+
+    cpSync(sourcePath, targetPath, { recursive: true });
+    packagedEntries.push(...listRelativeFiles(targetPath, directoryName));
+  }
+
   rmSync(outputZip, { force: true });
-  execFileSync('zip', ['-X', '-q', outputZip, ...requiredFiles], { cwd: stagingDir });
+  execFileSync('zip', ['-X', '-q', '-r', outputZip, ...packagedEntries], { cwd: stagingDir });
 
   const indexSize = statSync(path.join(stagingDir, 'index.html')).size;
   const zipSize = statSync(outputZip).size;
 
   console.log(`Created ${path.relative(rootDir, outputZip)} (${zipSize.toLocaleString()} bytes)`);
   console.log(`Inlined index.html is ${indexSize.toLocaleString()} bytes`);
-  console.log(`ZIP contains: ${requiredFiles.join(', ')}`);
+  console.log(`ZIP contains: ${packagedEntries.join(', ')}`);
 } finally {
   rmSync(stagingDir, { recursive: true, force: true });
 }

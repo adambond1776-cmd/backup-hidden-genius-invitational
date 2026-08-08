@@ -18,7 +18,7 @@ const distDir = path.join(rootDir, 'dist/apps/web');
 const deployDir = path.join(rootDir, 'deploy');
 const outputZip = path.join(deployDir, 'hostinger-upload.zip');
 const requiredFiles = ['.htaccess', 'index.html', 'llms.txt', 'robots.txt', 'sitemap.xml'];
-const optionalDirectories = ['images'];
+const optionalDirectories = ['images', 'documents'];
 
 const listRelativeFiles = (directoryPath, prefix = '') => {
   const entries = readdirSync(directoryPath, { withFileTypes: true });

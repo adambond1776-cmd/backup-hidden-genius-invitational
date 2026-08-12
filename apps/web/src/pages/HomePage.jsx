@@ -9,6 +9,7 @@ import StudentStoryCard from '@/components/StudentStoryCard.jsx';
 import ToolkitCard from '@/components/ToolkitCard.jsx';
 import TestimonialQuote from '@/components/TestimonialQuote.jsx';
 import StudentSprintForm from '@/components/StudentSprintForm.jsx';
+import LevelUpRIForm from '@/components/LevelUpRIForm.jsx';
 import TeacherCodesignForm from '@/components/TeacherCodesignForm.jsx';
 import CreativeCouncilForm from '@/components/CreativeCouncilForm.jsx';
 import PDFGenerator from '@/components/PDFGenerator.jsx';
@@ -248,6 +249,70 @@ const HomePage = () => {
                 viewport={{ once: true }}
               >
                 <StudentSprintForm />
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 3B - LEVEL UP RHODE ISLAND */}
+        <section id="levelupri" className="py-24 bg-card border-y border-border relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-bold tracking-wide uppercase mb-6 border border-primary/20">
+                  Level Up Rhode Island
+                </div>
+                <h2 className="mb-6 leading-tight">
+                  Rhode Island is where this gets real.
+                </h2>
+                <p className="text-xl text-primary font-bold mb-8">
+                  We're building a Rhode Island opportunity engine with local universities, colleges, and high schools — where students get real support, real work, mentors, employers, and a next step. Not just advice.
+                </p>
+
+                <ul className="space-y-6 mb-10">
+                  {[
+                    'Real, paid or credit-bearing work — capstones, internships, fellowships, independent study. Never "volunteering."',
+                    'Portfolio evidence, mentor access, and employer exposure students can actually use.',
+                    'Local community activation — businesses, events, and partners invested in real outcomes.',
+                    'An honest record of the build — with full student choice over how much of their story is shown.'
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-4">
+                      <div className="mt-1 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+                        <ArrowRight className="w-4 h-4 text-primary" />
+                      </div>
+                      <span className="text-lg font-medium text-foreground/90">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    'Students & Families',
+                    'Educators & Faculty',
+                    'Universities & Schools',
+                    'Employers & Mentors',
+                    'Community & Donor Partners'
+                  ].map((chip) => (
+                    <span
+                      key={chip}
+                      className="inline-flex items-center px-3 py-1.5 rounded-full bg-background border border-border text-sm font-bold text-foreground/80"
+                    >
+                      {chip}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+              >
+                <LevelUpRIForm />
               </motion.div>
             </div>
           </div>

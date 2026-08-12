@@ -17,6 +17,7 @@ const Footer = () => {
       title: 'Opportunities',
       links: [
         { label: '90-Day Student Sprint', href: '#sprint' },
+        { label: 'Level Up RI', href: '#levelupri' },
         { label: 'Teacher Co-Design Event', href: '#teachers' },
         { label: 'Creative Council', href: '#council' }
       ]

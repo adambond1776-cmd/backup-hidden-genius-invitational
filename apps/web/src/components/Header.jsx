@@ -77,6 +77,13 @@ const Header = () => {
                 Apply Now
               </a>
             </Button>
+            <a
+              href="#levelupri"
+              onClick={(e) => handleNavClick(e, '#levelupri', false)}
+              className="text-sm font-bold tracking-wide uppercase text-foreground/80 hover:text-primary transition-colors duration-200"
+            >
+              Rhode Island
+            </a>
           </nav>
           
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -110,7 +117,7 @@ const Header = () => {
                       {link.label}
                     </a>
                   ))}
-                  <div className="pt-6 border-t border-border">
+                  <div className="pt-6 border-t border-border space-y-4">
                     <Button 
                       className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold tracking-wide uppercase h-12"
                       asChild
@@ -119,6 +126,13 @@ const Header = () => {
                         Apply Now
                       </a>
                     </Button>
+                    <a
+                      href="#levelupri"
+                      onClick={(e) => handleNavClick(e, '#levelupri', false)}
+                      className="block text-center text-lg font-bold tracking-wide uppercase text-foreground hover:text-primary transition-colors duration-200"
+                    >
+                      Rhode Island
+                    </a>
                   </div>
                 </nav>
               </div>

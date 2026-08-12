@@ -254,48 +254,66 @@ const HomePage = () => {
         </section>
 
         {/* SECTION 4 - SUMMER TEACHER CO-DESIGN EVENT */}
-        <section id="teachers" className="py-24 bg-card border-y border-border">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-              <motion.div 
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-              >
-                <h2 className="mb-4">Help us build Phase 2.</h2>
-                <p className="text-xl text-primary font-bold mb-6">
-                  We're recruiting 5-10 teachers for a special summer event.
-                </p>
-                <p className="text-lg text-foreground/80 leading-relaxed mb-8">
-                  Teachers see the system in action every day. You know where the gaps are. We want your insights to shape what comes next as we expand the ecosystem to families.
-                </p>
-                
-                <div className="grid grid-cols-2 gap-4 mb-8">
-                  <div className="bg-background rounded-xl p-6 border border-border">
-                    <h4 className="text-primary font-bold text-2xl mb-2">4 Weeks</h4>
-                    <p className="text-muted-foreground font-medium">Intensive collaborative sprint</p>
-                  </div>
-                  <div className="bg-background rounded-xl p-6 border border-border">
-                    <h4 className="text-primary font-bold text-2xl mb-2">1-2 Days</h4>
-                    <p className="text-muted-foreground font-medium">Per week commitment</p>
-                  </div>
-                  <div className="bg-background rounded-xl p-6 border border-border col-span-2">
-                    <h4 className="text-foreground font-bold text-xl mb-2">The Mission</h4>
-                    <p className="text-muted-foreground font-medium">Co-design the Family Edition tools alongside the core team.</p>
-                  </div>
-                </div>
-                <p className="text-sm text-muted-foreground font-bold tracking-wide uppercase">
-                  Summer event only. Limited spots.
-                </p>
-              </motion.div>
+        <section id="teachers" className="py-24 bg-card border-y border-border relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div
+              className="relative rounded-3xl"
+              aria-disabled="true"
+            >
+              <div className="pointer-events-none select-none opacity-40 blur-[0.5px]">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                  <motion.div 
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                  >
+                    <h2 className="mb-4">Help us build Phase 2.</h2>
+                    <p className="text-xl text-primary font-bold mb-6">
+                      We're recruiting 5-10 teachers for a special summer event.
+                    </p>
+                    <p className="text-lg text-foreground/80 leading-relaxed mb-8">
+                      Teachers see the system in action every day. You know where the gaps are. We want your insights to shape what comes next as we expand the ecosystem to families.
+                    </p>
+                    
+                    <div className="grid grid-cols-2 gap-4 mb-8">
+                      <div className="bg-background rounded-xl p-6 border border-border">
+                        <h4 className="text-primary font-bold text-2xl mb-2">4 Weeks</h4>
+                        <p className="text-muted-foreground font-medium">Intensive collaborative sprint</p>
+                      </div>
+                      <div className="bg-background rounded-xl p-6 border border-border">
+                        <h4 className="text-primary font-bold text-2xl mb-2">1-2 Days</h4>
+                        <p className="text-muted-foreground font-medium">Per week commitment</p>
+                      </div>
+                      <div className="bg-background rounded-xl p-6 border border-border col-span-2">
+                        <h4 className="text-foreground font-bold text-xl mb-2">The Mission</h4>
+                        <p className="text-muted-foreground font-medium">Co-design the Family Edition tools alongside the core team.</p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-muted-foreground font-bold tracking-wide uppercase">
+                      Summer event only. Limited spots.
+                    </p>
+                  </motion.div>
 
-              <motion.div 
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                  <motion.div 
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                  >
+                    <TeacherCodesignForm />
+                  </motion.div>
+                </div>
+              </div>
+
+              <div
+                className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center"
+                aria-hidden="true"
               >
-                <TeacherCodesignForm />
-              </motion.div>
+                <div className="w-[140%] -rotate-6 bg-background/70 border-y border-primary/40 backdrop-blur-sm py-5 shadow-2xl shadow-black/40">
+                  <p className="text-center text-2xl md:text-4xl font-black uppercase tracking-[0.2em] text-primary">
+                    Coming Soon
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>

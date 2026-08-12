@@ -73,7 +73,7 @@ const LevelUpRIForm = () => {
         keepUpdated: data.keepUpdated ? 'Yes' : 'No',
       };
 
-      const response = await fetch('https://formsubmit.co/ajax/levelupri@hiddengeniusinvitational.com', {
+      const response = await fetch('https://formsubmit.co/ajax/90sprint@hiddengeniusinvitational.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
